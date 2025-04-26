@@ -1,45 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Manakea</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <title>Manakea - Registro</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="inicio.html">Manakea</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="inicio.html">Manakea</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
 
-    <!-- FOOTER CON REDES SOCIALES -->
-    <footer class="bg-dark text-center text-white py-4 mt-5">
-        <div class="container">
-            <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light mx-1">
-                <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-light mx-1">
-                <i class="bi bi-twitter"></i>
-            </a>
-            <a href="https://www.tiktok.com" target="_blank" class="btn btn-outline-light mx-1">
-                <i class="bi bi-tiktok"></i>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light mx-1">
-                <i class="bi bi-facebook"></i>
-            </a>
-        </div>
-    </footer>
+  <!-- FORMULARIO DE REGISTRO -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Regístrate</h2>
+    <form id="registroForm">
 
-    <!-- Bootstrap JS (necesario para el navbar responsive) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input type="text" class="form-control" placeholder="Nombre" required>
+      </div>
+
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input type="text" class="form-control" placeholder="Apellido" required>
+      </div>
+
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+        <input type="email" class="form-control" placeholder="Correo electrónico" required>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('password', this)">
+          <i class="bi bi-eye"></i>
+        </button>
+      </div>
+
+      <!-- Confirmar Contraseña -->
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirma tu contraseña" required>
+        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('confirmPassword', this)">
+          <i class="bi bi-eye"></i>
+        </button>
+      </div>
+
+      <div class="d-flex justify-content-end mb-3">
+        <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary me-2">Registrarse</button>
+        <a href="inicio.html" class="btn btn-outline-primary">Inicio</a>
+      </div>
+      
+
+    </form>
+  </div>
+
+  <!-- FOOTER CON REDES SOCIALES -->
+  <footer class="bg-dark text-center text-white py-4 mt-5">
+    <div class="container">
+      <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light mx-1">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-light mx-1">
+        <i class="bi bi-twitter"></i>
+      </a>
+      <a href="https://www.tiktok.com" target="_blank" class="btn btn-outline-light mx-1">
+        <i class="bi bi-tiktok"></i>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light mx-1">
+        <i class="bi bi-facebook"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scripts -->
+  <script>
+    // Mostrar / Ocultar Contraseña
+    function togglePassword(id, button) {
+      const input = document.getElementById(id);
+      const icon = button.querySelector('i');
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove('bi-eye');
+        icon.classList.add('bi-eye-slash');
+      } else {
+        input.type = "password";
+        icon.classList.remove('bi-eye-slash');
+        icon.classList.add('bi-eye');
+      }
+    }
+
+    // Validar que las contraseñas sean iguales
+    document.getElementById('registroForm').addEventListener('submit', function(event) {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      
+      if (password !== confirmPassword) {
+        event.preventDefault(); // Evita que se envíe el formulario
+        alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
+      }
+    });
+  </script>
+
 </body>
 </html>
