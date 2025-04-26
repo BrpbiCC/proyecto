@@ -103,33 +103,82 @@
 
 
 <!-- CARDS DE SERVICIOS -->
+<style>
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px; /* Ajusta según lo que necesites */
+  }
+
+  .card-title,
+  .card-text {
+    text-align: center;
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+</style>
+
+
 <div class="container my-5">
-    <div class="row justify-content-center">
-        <div class="card mx-2" style="width: 18rem;">
-            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/b6/93/3e/hotel-casa-bosque.jpg?w=1200&h=-1&s=1" class="card-img-top" alt="Hospedaje">
-            <div class="card-body">
-                <h5 class="card-title">Hospedaje</h5>
-                <p class="card-text">Encuentra lugares únicos para alojarte.</p>
-                <a href="hospedaje.html" class="btn btn-primary">Ver más</a>
-            </div>
-        </div>
-        <div class="card mx-2" style="width: 18rem;">
-            <img src="https://cuponassets.cuponatic-latam.com/backendCl/uploads/imagenes_descuentos/329899/b79621b5351ddf001b5f74e5271e519ae8a71328.XL2.jpg" class="card-img-top" alt="Actividades">
-            <div class="card-body">
-                <h5 class="card-title">Actividades</h5>
-                <p class="card-text">Explora experiencias inolvidables.</p>
-                <a href="actividad.html" class="btn btn-primary">Ver más</a>
-            </div>
-        </div>
-        <div class="card mx-2" style="width: 18rem;">
-            <img src="https://www.cajondelmaipo.com/wp-content/uploads/2022/10/restaurantes_cajon_del_maipo.jpg" class="card-img-top" alt="Gastronomía">
-            <div class="card-body">
-                <h5 class="card-title">Gastronomía</h5>
-                <p class="card-text">Sabores que te harán volver.</p>
-                <a href="gastronomia.html" class="btn btn-primary">Ver más</a>
-            </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="card mx-2" style="width: 18rem;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/b6/93/3e/hotel-casa-bosque.jpg?w=1200&h=-1&s=1" class="card-img-top" alt="Hospedaje">
+      <div class="card-body">
+        <h5 class="card-title">Hospedaje</h5>
+        <p class="card-text">Encuentra lugares únicos para alojarte.</p>
+        <a href="hospedaje.html" class="btn btn-primary">Ver más</a>
+      </div>
     </div>
+    <div class="card mx-2" style="width: 18rem;">
+      <img src="https://cuponassets.cuponatic-latam.com/backendCl/uploads/imagenes_descuentos/329899/b79621b5351ddf001b5f74e5271e519ae8a71328.XL2.jpg" class="card-img-top" alt="Actividades">
+      <div class="card-body">
+        <h5 class="card-title">Actividades</h5>
+        <p class="card-text">Explora experiencias inolvidables.</p>
+        <a href="actividad.html" class="btn btn-primary">Ver más</a>
+      </div>
+    </div>
+    <div class="card mx-2" style="width: 18rem;">
+      <img src="https://www.cajondelmaipo.com/wp-content/uploads/2022/10/restaurantes_cajon_del_maipo.jpg" class="card-img-top" alt="Gastronomía">
+      <div class="card-body">
+        <h5 class="card-title">Gastronomía</h5>
+        <p class="card-text">Sabores que te harán volver.</p>
+        <a href="gastronomia.html" class="btn btn-primary">Ver más</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN CLIMA Y MAPA --> 
+<div class="container my-5">
+  <div class="row">
+    <!-- Sección de clima -->
+    <div class="col-md-6">
+      <div class="border p-4 rounded shadow-sm" style="background-color: #f0f8ff;">
+        <h5 class="text-center text-primary">Clima Actual</h5>
+        <div id="clima">
+          <p id="ciudad" class="text-center">Cargando ciudad...</p>
+          <p id="temperatura" class="text-center">Cargando temperatura...</p>
+          <p id="descripcion" class="text-center">Cargando descripción...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de Google Maps -->
+    <div class="col-md-6">
+      <div class="border p-4 rounded shadow-sm" style="background-color: #f0f8ff;">
+        <h5 class="text-center text-primary">Ubicación en el Mapa</h5>
+        <div id="map" style="height: 400px;"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER CON REDES SOCIALES -->
@@ -153,5 +202,45 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
-</html>
+<!-- Script para obtener el clima -->
+<script>
+  const apiKeyWeather = "1e300d5e48a8b7b31c6bb73937d9ec43";
+  const ciudad = "San jose de maipo,CL";
+
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKeyWeather}&units=metric&lang=es`)
+    .then(res => res.json())
+    .then(data => {
+      const temp = data.main.temp;
+      const descripcion = data.weather[0].description;
+      const ciudad = data.name;
+      const icono = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
+      
+      document.getElementById("temperatura").textContent = `Temperatura: ${temp}°C`;
+      document.getElementById("descripcion").textContent = `Descripción: ${descripcion}`;
+      document.getElementById("ciudad").textContent = `Ciudad: ${ciudad}`;
+      document.getElementById("icono").src = icono;
+    })
+    .catch(err => console.log(err));
+</script>
+
+<!-- Script para inicializar Google Maps -->
+<script>
+  function initMap() {
+    const cajonMaipo = { lat: -33.75, lng: -70.35 };  // Coordenadas del Cajón del Maipo
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 10,
+      center: cajonMaipo,
+    });
+    new google.maps.Marker({
+      position: cajonMaipo,
+      map: map,
+      title: "Cajón del Maipo"
+    });
+  }
+</script>
+
+<!-- Script para cargar Google Maps -->
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYqeLHZ9y433qxiJ2xwTxKTyq8cnF5TlU&callback=initMap">
+</script>
