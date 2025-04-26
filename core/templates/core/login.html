@@ -14,13 +14,34 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="inicio.html">Manakea</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
       </button>
     </div>
   </nav>
 
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+          <h4 class="text-center text-primary mb-4">Iniciar Sesión</h4>
+          <form>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="correo" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="contrasena" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="contrasena" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+              <p class="mb-0">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <!-- FOOTER CON REDES SOCIALES -->
   <footer class="bg-dark text-center text-white py-4 mt-5">
