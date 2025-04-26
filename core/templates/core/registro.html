@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -19,75 +20,76 @@
 
   <!-- FORMULARIO DE REGISTRO -->
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Regístrate</h2>
-    <form id="registroForm">
+    <div class="col-md-6 col-12 mx-auto">
+      <h2 class="text-center mb-4">Regístrate</h2>
+      <form id="registroForm">
 
-      <div class="mb-3 input-group">
-        <span class="input-group-text"><i class="bi bi-person"></i></span>
-        <input type="text" class="form-control" placeholder="Nombre" required>
-      </div>
+        <div class="mb-3 input-group">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+          <input type="text" class="form-control" placeholder="Nombre" required>
+        </div>
 
-      <div class="mb-3 input-group">
-        <span class="input-group-text"><i class="bi bi-person"></i></span>
-        <input type="text" class="form-control" placeholder="Apellido" required>
-      </div>
+        <div class="mb-3 input-group">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+          <input type="text" class="form-control" placeholder="Apellido" required>
+        </div>
 
-      <div class="mb-3 input-group">
-        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-        <input type="email" class="form-control" placeholder="Correo electrónico" required>
-      </div>
+        <div class="mb-3 input-group">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          <input type="email" class="form-control" placeholder="Correo electrónico" required>
+        </div>
 
-      <!-- Contraseña -->
-      <div class="mb-3 input-group">
-        <span class="input-group-text"><i class="bi bi-lock"></i></span>
-        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
-        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('password', this)">
-          <i class="bi bi-eye"></i>
-        </button>
-      </div>
+        <!-- Contraseña -->
+        <div class="mb-3 input-group">
+          <span class="input-group-text"><i class="bi bi-lock"></i></span>
+          <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+          <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('password', this)">
+            <i class="bi bi-eye"></i>
+          </button>
+        </div>
 
-      <!-- Confirmar Contraseña -->
-      <div class="mb-3 input-group">
-        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirma tu contraseña" required>
-        <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('confirmPassword', this)">
-          <i class="bi bi-eye"></i>
-        </button>
-      </div>
+        <!-- Confirmar Contraseña -->
+        <div class="mb-3 input-group">
+          <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirma tu contraseña" required>
+          <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('confirmPassword', this)">
+            <i class="bi bi-eye"></i>
+          </button>
+        </div>
 
-      <div class="d-flex justify-content-end mb-3">
-        <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
-      </div>
+        <div class="d-flex justify-content-end mb-3">
+          <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+        </div>
 
-      <div class="d-flex justify-content-between">
-        <button type="submit" class="btn btn-primary me-2">Registrarse</button>
-        <a href="login.html" class="btn btn-outline-primary">Inicio</a>
-      </div>
-      
+        <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+          <a href="login.html" class="btn btn-outline-primary">Iniciar sesión</a>
+        </div>
 
-    </form>
+      </form>
+    </div>
   </div>
 
   <!-- Footer con redes sociales -->
-<footer class="bg-dark text-center text-white py-4 mt-5">
-  <div class="container">
-    <div class="mb-3">
-      <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light mx-1">
-        <i class="bi bi-instagram"></i>
-      </a>
-      <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-light mx-1">
-        <i class="bi bi-twitter"></i>
-      </a>
-      <a href="https://www.tiktok.com" target="_blank" class="btn btn-outline-light mx-1">
-        <i class="bi bi-tiktok"></i>
-      </a>
-      <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light mx-1">
-        <i class="bi bi-facebook"></i>
-      </a>
+  <footer class="bg-dark text-center text-white py-4 mt-5">
+    <div class="container">
+      <div class="mb-3">
+        <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light mx-1">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-light mx-1">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" class="btn btn-outline-light mx-1">
+          <i class="bi bi-tiktok"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light mx-1">
+          <i class="bi bi-facebook"></i>
+        </a>
+      </div>
+      <p class="mb-0 small">&copy; 2025 Todos los derechos reservados.</p>
     </div>
-    <p class="mb-0 small">&copy; 2025 Todos los derechos reservados.</p>
-  </div>
-</footer>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -113,7 +115,7 @@
     document.getElementById('registroForm').addEventListener('submit', function(event) {
       const password = document.getElementById('password').value;
       const confirmPassword = document.getElementById('confirmPassword').value;
-      
+
       if (password !== confirmPassword) {
         event.preventDefault(); // Evita que se envíe el formulario
         alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
