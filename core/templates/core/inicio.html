@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,14 +10,82 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+  <style>
+  .carousel-lide{
+    min-height: 380px
+  }
+
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px; 
+  }
+
+  .card-title,
+  .card-text {
+    text-align: center;
+  }
+
+  .btn {
+    margin-top: auto;
+
+  }
+
+  .icono-decorativo {
+  font-size: 80px; /* Tamaño del icono que se le quiere dar */
+  color: rgba(255, 193, 7, 0.4); /* Amarillo del icono */
+  text-align: center;
+  margin-top: 20px;
+}
+
+  .card-custom {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-height: 400px; /*Aquí defines la altura mínima del cuadro*/
+  transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: scale(1.02);
+}
+
+.section-clima-mapa .row {
+  gap: 30px; /*Separación de 3cm aprox  entre Ambos cuadros CLIMA Y UBICACION*/
+}
+
+#clima p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+  border: 2px solid #007BFF;
+}
+
+
+
+</style>
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="inicio.html">Manakea</a>
+    <a class="navbar-brand" href="inicio.html">MANAKEA TOURS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -24,13 +94,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="hospedaje.html">Hospedaje</a>
+          <a class="nav-link active" href="hospedaje.html">HOSPEDAJES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="actividad.html">Actividades</a>
+          <a class="nav-link" href="actividad.html">ACTIVIDADES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="gastronomia.html">Gastronomía</a>
+          <a class="nav-link" href="gastronomia.html">GASTRONOMIA</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="registro.html">
@@ -43,13 +113,13 @@
 </nav>
 
 <!-- CAROUSEL PRINCIPAL CON TEXTO -->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" style="height: 250px;">
+<div id="carouselExampleSlidesOnly" class="carousel-lide" data-bs-ride="carousel" style="height: 250px;">
   <div class="carousel-inner h-100">
     <div class="carousel-item active position-relative h-100">
       <img src="https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2019/09/cajon-del-maipo-embalse-el-yeso-chile.jpg"
            class="d-block w-100 h-100 object-fit-cover" alt="Embalse El Yeso, Cajón del Maipo">
       <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white bg-dark bg-opacity-50">
-        <h1 class="h3">Bienvenido a Manakea</h1>
+        <h1 class="h3">BIENVENIDO A MANAKEA TOURS</h1>
         <p class="lead">Conecta con lo auténtico, viaja con el alma</p>
       </div>
     </div>
@@ -58,16 +128,24 @@
 
 
 <!-- SECCIÓN QUIÉNES SOMOS + IMAGEN DEL LUGAR -->
-<div class="container mt-5">
+<div class="container mt">
   <div class="row">
     <!-- Columna de texto -->
     <div class="col-md-6 mb-4">
       <div class="border p-4 h-100">
-        <h5 class="text-primary">Quiénes Somos</h5>
+        <h5 class="text-primary">QUIENÉS SOMOS</h5>
         <p style="font-style: italic;">
-          Somos Manakea, una plataforma dedicada a promover los destinos turísticos más hermosos de nuestra región. 
+          Somos Manakea Tours, una plataforma dedicada a promover los destinos turísticos más hermosos de nuestra región. 
           Descubre con nosotros experiencias únicas, aventuras emocionantes y lugares que te enamorarán. 
-          Nuestro compromiso es acercarte a la naturaleza, la cultura y la historia de cada rincón.
+          Nuestro compromiso es acercarte a la naturaleza, la cultura y la historia de cada rincón que visitamos.
+          
+          Creemos que el turismo debe ser una experiencia transformadora, que conecte a las personas con el entorno, fomente el respeto por las comunidades locales y deje recuerdos inolvidables.
+          En Manakea Tours nos especializamos en:
+          Excursiones guiadas por guías locales expertos
+          Reservas de alojamientos con encanto y comodidad
+          Gastronomía típica para disfrutar los sabores auténticos
+          Actividades al aire libre como trekking, kayak, cabalgatas y más
+          Planes personalizados para todo tipo de viajeros.
         </p>
       </div>
     </div>
@@ -102,37 +180,13 @@
 </div>
 
 
-<!-- CARDS DE SERVICIOS -->
-<style>
-  .card-img-top {
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 250px; /* Ajusta según lo que necesites */
-  }
-
-  .card-title,
-  .card-text {
-    text-align: center;
-  }
-
-  .btn {
-    margin-top: auto;
-  }
-</style>
-
-
+<!-- CARD ACTIVIDADES -->
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="card mx-2" style="width: 18rem;">
       <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/b6/93/3e/hotel-casa-bosque.jpg?w=1200&h=-1&s=1" class="card-img-top" alt="Hospedaje">
       <div class="card-body">
-        <h5 class="card-title">Hospedaje</h5>
+        <h5 class="card-title">HOSPEDAJES</h5>
         <p class="card-text">Encuentra lugares únicos para alojarte.</p>
         <a href="hospedaje.html" class="btn btn-primary">Ver más</a>
       </div>
@@ -140,7 +194,7 @@
     <div class="card mx-2" style="width: 18rem;">
       <img src="https://cuponassets.cuponatic-latam.com/backendCl/uploads/imagenes_descuentos/329899/b79621b5351ddf001b5f74e5271e519ae8a71328.XL2.jpg" class="card-img-top" alt="Actividades">
       <div class="card-body">
-        <h5 class="card-title">Actividades</h5>
+        <h5 class="card-title">ACTIVIDADES</h5>
         <p class="card-text">Explora experiencias inolvidables.</p>
         <a href="actividad.html" class="btn btn-primary">Ver más</a>
       </div>
@@ -148,7 +202,7 @@
     <div class="card mx-2" style="width: 18rem;">
       <img src="https://www.cajondelmaipo.com/wp-content/uploads/2022/10/restaurantes_cajon_del_maipo.jpg" class="card-img-top" alt="Gastronomía">
       <div class="card-body">
-        <h5 class="card-title">Gastronomía</h5>
+        <h5 class="card-title">GASTRONOMIA</h5>
         <p class="card-text">Sabores que te harán volver.</p>
         <a href="gastronomia.html" class="btn btn-primary">Ver más</a>
       </div>
@@ -156,13 +210,13 @@
   </div>
 </div>
 
-<!-- SECCIÓN CLIMA Y MAPA --> 
+<!-- API CLIMA   
+ <section class="section-clima" >
 <div class="container my-5">
   <div class="row">
-    
     <div class="col-md-6">
       <div class="border p-4 rounded shadow-sm" style="background-color: #f0f8ff;">
-        <h5 class="text-center text-primary">Clima Actual</h5>
+        <h5 class="text-center text-primary">CLIMA ACTUAL</h5>
         <div id="clima">
           <p id="ciudad" class="text-center">Cargando ciudad...</p>
           <p id="temperatura" class="text-center">Cargando temperatura...</p>
@@ -170,15 +224,90 @@
         </div>
       </div>
     </div>
+</div>
+</div>
+</section>
 
+     API MAPA  
+<section class="section-ubicacion">
     <div class="col-md-6">
       <div class="border p-4 rounded shadow-sm" style="background-color: #f0f8ff;">
-        <h5 class="text-center text-primary">Ubicación en el Mapa</h5>
+        <h5 class="text-center text-primary">UBICACION EN EL MAPA</h5>
         <div id="map" style="height: 400px;"></div>
       </div>
     </div>
+</section>-->
+
+<section class="section-clima-mapa my-5">
+  <div class="container">
+    <div class="row justify-content-center gap-4">
+
+      <!-- API CLIMA -->
+      <div class="col-md-5 clima-box">
+        <div class="card-custom">
+          <h5 class="text-center text-primary fw-bold">
+            <i class="fas fa-cloud-sun fa-lg me-2"></i> CLIMA ACTUAL</h5>
+          <div id="clima" class="text-center mt-3">
+            <div class="icono-decorativo"><i class="fas fa-sun"></i></div>
+            <p id="ciudad">Cargando ciudad...</p>
+            <p id="temperatura">Cargando temperatura...</p>
+            <p id="descripcion">Cargando descripción...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- API MAPA -->
+      <div class="col-md-5 mapa-box">
+        <div class="card-custom">
+          <h5 class="text-center text-primary fw-bold">
+            <i class="fas fa-map-marker-alt fa-lg me-2"></i> UBICACIÓN EN EL MAPA </h5>
+          <div id="map" style="height: 300px; border-radius: 10px;"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
+</section>
+
+
+
+<!-- Script para obtener el clima, consumiendo la API -->
+<script>
+  const apiKeyWeather = "1e300d5e48a8b7b31c6bb73937d9ec43";
+  const ciudad = "san jose de maipo,santiago";
+
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKeyWeather}&units=metric&lang=es`)
+    .then(res => res.json())
+    .then(data => {
+      const temp = data.main.temp;
+      const descripcion = data.weather[0].description;
+      const ciudad = data.name;
+      const icono = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
+      
+      document.getElementById("temperatura").textContent = `Temperatura: ${temp}°C`;
+      document.getElementById("descripcion").textContent = `Descripción: ${descripcion}`;
+      document.getElementById("ciudad").textContent = `Ciudad: ${ciudad}`;
+      document.getElementById("icono").src = icono;
+    })
+    .catch(err => console.log(err));
+</script>
+
+<!-- Script para inicializar Google Maps y coordenadas --> 
+<script>
+  function initMap() {
+    const cajonMaipo = { lat: -33.75, lng: -70.35 };  // Coordenadas del Cajón del Maipo
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 10,
+      center: cajonMaipo,
+    });
+    new google.maps.Marker({
+      position: cajonMaipo,
+      map: map,
+      title: "CAJON DEL MAIPO"
+    });
+  }
+</script>
 
 <!-- Footer con redes sociales -->
 <footer class="bg-dark text-center text-white py-4 mt-5">
@@ -204,43 +333,6 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Script para obtener el clima -->
-<script>
-  const apiKeyWeather = "1e300d5e48a8b7b31c6bb73937d9ec43";
-  const ciudad = "San jose de maipo,CL";
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKeyWeather}&units=metric&lang=es`)
-    .then(res => res.json())
-    .then(data => {
-      const temp = data.main.temp;
-      const descripcion = data.weather[0].description;
-      const ciudad = data.name;
-      const icono = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-
-      
-      document.getElementById("temperatura").textContent = `Temperatura: ${temp}°C`;
-      document.getElementById("descripcion").textContent = `Descripción: ${descripcion}`;
-      document.getElementById("ciudad").textContent = `Ciudad: ${ciudad}`;
-      document.getElementById("icono").src = icono;
-    })
-    .catch(err => console.log(err));
-</script>
-
-<!-- Script para inicializar Google Maps -->
-<script>
-  function initMap() {
-    const cajonMaipo = { lat: -33.75, lng: -70.35 };  // Coordenadas del Cajón del Maipo
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 10,
-      center: cajonMaipo,
-    });
-    new google.maps.Marker({
-      position: cajonMaipo,
-      map: map,
-      title: "Cajón del Maipo"
-    });
-  }
-</script>
 
 <!-- Script para cargar Google Maps -->
 <script async
