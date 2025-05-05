@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/global.css' %}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -51,60 +51,71 @@
     </div>
   </div>
 
-  <style>
-    .card-img-top {
-      height: 200px;
-      object-fit: cover;
-    }
-  </style>
-  
+
   <!-- CARDS DE SERVICIOS ACTIVIDADES -->
-  <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="card mx-2 text-center" style="width: 18rem;">
-        <img src="https://volanderos.wordpress.com/wp-content/uploads/2016/03/011_jonathajunge__dsc_0137.jpg?w=2000&h=1360&crop=1" class="card-img-top" alt="Canyoning">
-        <div class="card-body">
-          <h5 class="card-title">Canyoning</h5>
+  <section class="section-actividades">
+    <center><h1>ACTIVIDADES</h1></center>
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="card mx-2 text-center" style="width: 18rem;">
+          <img src="https://volanderos.wordpress.com/wp-content/uploads/2016/03/011_jonathajunge__dsc_0137.jpg?w=2000&h=1360&crop=1" class="card-img-top" alt="Canyoning">
+          <div class="card-body">
+            <h5 class="card-title">CANYONING</h5>
+            <p>Desciende cascadas y explora cañones en una aventura llena de adrenalina y naturaleza pura.</p>
+            <a href="#" class="btn btn-primary">Reservar</a>
+          </div>
         </div>
-      </div>
-      <div class="card mx-2 text-center" style="width: 18rem;">
-        <img src="https://s3.amazonaws.com/entrekidscl/vich_files/actividadfoto/5e18812ea706d882273062.png" class="card-img-top" alt="Rafting">
-        <div class="card-body">
-          <h5 class="card-title">Rafting</h5>
+        <div class="card mx-2 text-center" style="width: 18rem;">
+          <img src="https://s3.amazonaws.com/entrekidscl/vich_files/actividadfoto/5e18812ea706d882273062.png" class="card-img-top" alt="Rafting">
+          <div class="card-body">
+            <h5 class="card-title">RAFTING</h5>
+            <p>Navega por rápidos desafiantes y disfruta la fuerza del río en una experiencia grupal inolvidable.</p>
+            <a href="#" class="btn btn-primary">Reservar</a>
+          </div>
         </div>
-      </div>
-      <div class="card mx-2 text-center" style="width: 18rem;">
-        <img src="https://vulcanopro.s3.amazonaws.com/images/lar_IcPQfAvByuGQlR0SpbCZeXOT8oljhMmWnsjwdfhD.jpeg" class="card-img-top" alt="Canopy">
-        <div class="card-body">
-          <h5 class="card-title">Canopy</h5>
+        <div class="card mx-2 text-center" style="width: 18rem;">
+          <img src="https://vulcanopro.s3.amazonaws.com/images/lar_IcPQfAvByuGQlR0SpbCZeXOT8oljhMmWnsjwdfhD.jpeg" class="card-img-top" alt="Canopy">
+          <div class="card-body">
+            <h5 class="card-title">CANOPY</h5>
+            <p>Vuela entre los árboles y contempla la naturaleza desde lo alto con pura emoción y libertad.</p>
+            <a href="#" class="btn btn-primary">Reservar</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   
-  <!-- CARDS DE SERVICIOS -->
-  <div class="container my-5">
-    <div class="row justify-content-center">
+    <!-- CARDS DE SERVICIOS ACTIVIDADES -->
+    <div class="container my-5">
+      <div class="row justify-content-center">
         <div class="card mx-2" style="width: 18rem;">
-            <img src="https://mujeresalacumbre.com/wp-content/uploads/2021/08/IMG-20201108-WA0055-1024x768.jpg" class="card-img-top" alt="Hospedaje">
-            <div class="card-body">
-                <h5 class="card-title">Trekking</h5>
-            </div>
+          <img src="https://mujeresalacumbre.com/wp-content/uploads/2021/08/IMG-20201108-WA0055-1024x768.jpg" class="card-img-top" alt="Trekking">
+          <div class="card-body">
+            <h5 class="card-title">TREKKING</h5>
+            <p>Recorre senderos únicos, conecta con la montaña y disfruta de paisajes que te quitarán el aliento.</p>
+            <a href="#" class="btn btn-primary">Reservar</a>
+          </div>
         </div>
         <div class="card mx-2" style="width: 18rem;">
-            <img src="https://cascadadelasanimas.cl/wp-content/uploads/2024/11/MuroEscalada-1.jpg" class="card-img-top" alt="Actividades">
-            <div class="card-body">
-              <h5 class="card-title">Muro de escalada</h5>
-            </div>
+          <img src="https://cascadadelasanimas.cl/wp-content/uploads/2024/11/MuroEscalada-1.jpg" class="card-img-top" alt="Muro de Escalada">
+          <div class="card-body">
+            <h5 class="card-title">MURO DE ESCALADA</h5>
+            <p>Desafía la gravedad en un entorno seguro y entretenido, ideal para todas las edades.</p>
+            <a href="#" class="btn btn-primary">Reservar</a>
+          </div>
         </div>
         <div class="card mx-2" style="width: 18rem;">
-            <img src="https://cascadadelasanimas.cl/wp-content/uploads/2018/11/DSC_9114-700x464-1.jpg" class="card-img-top" alt="Gastronomía">
-            <div class="card-body">
-                <h5 class="card-title">Cuerdas Altas</h5>
-            </div>
+          <img src="https://cascadadelasanimas.cl/wp-content/uploads/2018/11/DSC_9114-700x464-1.jpg" class="card-img-top" alt="Cuerdas Altas">
+          <div class="card-body">
+            <h5 class="card-title">CUERDAS ALTAS</h5>
+            <p>Pon a prueba tu equilibrio y destreza en circuitos elevados entre árboles y plataformas.</p>
+            <a href="#" class="btn btn-primary">Reservar</a>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+
 
 <!-- Footer con redes sociales -->
 <footer class="bg-dark text-center text-white py-4 mt-5">
