@@ -66,4 +66,10 @@
   border: 2px solid #007BFF;
 }
 
+.bg{
+  background-image: url(../img/cajon-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 
