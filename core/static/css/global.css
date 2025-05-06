@@ -54,6 +54,11 @@
   margin-top: 20px;
 }
 
+.section-gastronomia{
+
+  margin-top: 20px;
+}
+
 #clima p {
   font-size: 1.1rem;
   color: #333;
@@ -66,8 +71,33 @@
   border: 2px solid #007BFF;
 }
 
+/* Tamaño de la foto de background de Vista Inicio */
 .bg{
   background-image: url(../img/cajon-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Tamaño de la foto de background de Vista Hospedajes */
+.bg-2{
+  background-image: url(../img/cajon-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Tamaño de la foto de background de Vista Actividad */
+.bg-3{
+  background-image: url(../img/cabalgata.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Tamaño de la foto de background de Vista Gastronomia */
+.bg-4{
+  background-image: url(../img/cajon-4.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

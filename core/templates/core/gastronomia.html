@@ -11,9 +11,11 @@
     </head>
 
     <body>
+
+    <section class="bg-4"> 
           <!--NAVBAR-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
     <a class="navbar-brand" href="{% url 'inicio'%}">MANAKEA TOURS</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -38,10 +40,10 @@
 </nav>
 
   <!-- CAROUSEL PRINCIPAL CON TEXTO -->
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" style="height: 250px;">
+  <div id="carouselExampleSlidesOnly" class="carousel slide border border-white" data-bs-ride="carousel" style="height: 300px;">
     <div class="carousel-inner h-100">
       <div class="carousel-item active position-relative h-100">
-        <img src="https://www.cascadalodge.cl/wp-content/uploads/2016/05/DSC_8817.jpg"
+        <img src="{% static 'img/hombre-sentado.jpg'%}"
              class="d-block w-100 h-100 object-fit-cover" alt="Embalse El Yeso, Cajón del Maipo">
         <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white bg-dark bg-opacity-50">
           <h1 class="h3">Bienvenido a Manakea</h1>
@@ -51,8 +53,8 @@
     </div>
   </div>
 
-
-  
+  <section class="section-gastronomia">
+  <center><h1>GASTRONOMIA</h1></center>
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="card mx-2 text-center" style="width: 18rem;">
@@ -98,7 +100,8 @@
       </div>
     </div>
   </div>
-  
+</section>
+
 <!-- Footer con redes sociales -->
 <footer class="bg-dark text-center text-white py-4 mt-5">
   <div class="container">
@@ -119,6 +122,7 @@
     <p class="mb-0 small">&copy; 2025 Todos los derechos reservados.</p>
   </div>
 </footer>
+</section>
 
 
     <!-- Bootstrap JS (opcional si no usas componentes JS de Bootstrap) -->

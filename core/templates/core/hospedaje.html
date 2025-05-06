@@ -1,19 +1,25 @@
+
+
 {% load static %}
+
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{% static 'css/global.css' %}"">
+        <link rel="stylesheet" href="{% static 'css/global.css'%}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
 
     <body>
+
+    <section class="bg-2"> 
            <!--NAVBAR-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
     <a class="navbar-brand" href="{% url 'inicio'%}">MANAKEA TOURS</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -38,19 +44,18 @@
 </nav>
 
   <!-- CAROUSEL PRINCIPAL CON TEXTO -->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" style="height: 250px;">
-  <div class="carousel-inner h-100">
-    <div class="carousel-item active position-relative h-100">
-      <img src="https://cajondelmaipochile.cl/wp-content/uploads/2023/02/Casa-Chocolate-Cajon-del-Maipo-p3.jpg"
-           class="d-block w-100 h-100 object-fit-cover" alt="Embalse El Yeso, Cajón del Maipo">
-      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white bg-dark bg-opacity-50">
-        <h1 class="h3">Bienvenido a Manakea</h1>
-        <p class="lead">Conecta con lo auténtico, viaja con el alma</p>
+  <div id="carouselExampleSlidesOnly" class="carousel slide border border-white" data-bs-ride="carousel" style="height: 300px;">
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active position-relative h-100">
+        <img src="{% static 'img/cabana-hospedaje.jpg'%}"
+             class="d-block w-100 h-100 object-fit-cover" alt="Embalse El Yeso, Cajón del Maipo">
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white bg-dark bg-opacity-50">
+          <h1 class="h3">Bienvenido a Manakea</h1>
+          <p class="lead">Conecta con lo auténtico, viaja con el alma</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 
 <!-- CARD PRINCIPAL DE HOSPEDAJES -->
 <section class="section-actividades">
@@ -114,6 +119,8 @@
     </div>
   </div>
 </section>
+
+
       
 <!-- Footer con redes sociales -->
 <footer class="bg-dark text-center text-white py-4 mt-5">
@@ -135,8 +142,10 @@
     <p class="mb-0 small">&copy; 2025 Todos los derechos reservados.</p>
   </div>
 </footer>
+</section>
 
     <!-- Bootstrap JS (opcional si no usas componentes JS de Bootstrap) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> 
+
