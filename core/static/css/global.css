@@ -103,13 +103,8 @@
   background-size: cover;
 }
 
-/* Boton popover Hospedajes/reservar */
-.custom-popover {
-  --bs-popover-max-width: 200px;
-  --bs-popover-border-color: var(--bd-violet-bg);
-  --bs-popover-header-bg: var(--bd-violet-bg);
-  --bs-popover-header-color: var(--bs-white);
-  --bs-popover-body-padding-x: 1rem;
-  --bs-popover-body-padding-y: .5rem;
+/* Popover estilo red */
+.popover{
+  color: crimson;
 }
 
