@@ -18,10 +18,12 @@
     <body>
 
     <section class="bg-2"> 
-           <!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-    <a class="navbar-brand" href="{% url 'inicio'%}">MANAKEA TOURS</a>
+           <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand {% if request.resolver_match.url_name == 'inicio' %}fw-bold{% endif %}" href="{% url 'inicio' %}">
+      MANAKEA TOURS
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,21 +33,27 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'hospedaje'%} ">HOSPEDAJES</a>
+          <a class="nav-link {% if request.resolver_match.url_name == 'hospedaje' %}active fw-bold{% endif %}" href="{% url 'hospedaje' %}">
+            HOSPEDAJES
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'actividad'%} ">ACTIVIDADES</a>
+          <a class="nav-link {% if request.resolver_match.url_name == 'actividad' %}active fw-bold{% endif %}" href="{% url 'actividad' %}">
+            ACTIVIDADES
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'gastronomia'%} ">GASTRONOMIA</a>
+          <a class="nav-link {% if request.resolver_match.url_name == 'gastronomia' %}active fw-bold{% endif %}" href="{% url 'gastronomia' %}">
+            GASTRONOMIA
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'registro' %}">
+          <a class="nav-link {% if request.resolver_match.url_name == 'registro' %}active{% endif %}" href="{% url 'registro' %}">
             <i class="bi bi-person-circle"></i> Registra tu cuenta
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">
+          <a class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}" href="{% url 'login' %}">
             <i class="bi bi-person-circle"></i> Inicio de Sesion
           </a>
         </li>
@@ -53,6 +61,7 @@
     </div>
   </div>
 </nav>
+
 
   <!-- CAROUSEL PRINCIPAL CON TEXTO -->
   <div id="carouselExampleSlidesOnly" class="carousel slide border border-white" data-bs-ride="carousel" style="height: 300px;">
