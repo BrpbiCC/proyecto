@@ -22,3 +22,5 @@ def actividad(request):
 def gastronomia(request):
         return render (request, 'core/gastronomia.html')
 
+def carrito(request):
+        return render (request, 'core/carrito.html')
