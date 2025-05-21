@@ -1,8 +1,5 @@
 from django.db import models
 
-
-
-
 class TipoUsuario(models.Model):
     """Represents the type of user (e.g., cliente, anfitrión, administrador)."""
     tipo_nombre = models.CharField(max_length=255)

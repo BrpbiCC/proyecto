@@ -1,11 +1,10 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 from .models import Usuario, TipoUsuario
 
 class RegistroClienteForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-    confirm_password = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(widget=forms.PasswordInput(), label="Contraseña")
+    confirm_password = forms.CharField(widget=forms.PasswordInput(), label="Confirmar contraseña")
 
     class Meta:
         model = Usuario
@@ -22,21 +21,20 @@ class RegistroClienteForm(forms.ModelForm):
         password = cleaned_data.get("password")
         confirm_password = cleaned_data.get("confirm_password")
 
-        if password is not None and password != confirm_password:
+        if password and confirm_password and password != confirm_password:
             raise ValidationError("Las contraseñas no coinciden.")
         return cleaned_data
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.set_password(self.cleaned_data['password'])
+
         try:
             tipo_cliente = TipoUsuario.objects.get(tipo_nombre='cliente')
             user.tipo_usuario = tipo_cliente
         except TipoUsuario.DoesNotExist:
-            # Handle the case where 'cliente' TipoUsuario doesn't exist.
-            # You might want to create it here or handle the error appropriately.
-            print("Error: El tipo de usuario 'cliente' no existe. Asegúrate de crearlo.")
-            raise
+            raise ValidationError("Error: El tipo de usuario 'cliente' no existe. Asegúrate de crearlo.")
+
         if commit:
             user.save()
         return user
