@@ -9,4 +9,7 @@ urlpatterns = [
     path('actividad/', actividad, name='actividad'),
     path('gastronomia/', gastronomia, name='gastronomia'),
     path('carrito/', carrito, name='carrito'),
+    path('inicio_registrado/', inicio_registrado, name='inicio_registrado'),
+    path('perfil/', perfil, name='perfil'),
+    
 ]

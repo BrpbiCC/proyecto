@@ -24,3 +24,9 @@ def gastronomia(request):
 
 def carrito(request):
         return render (request, 'core/carrito.html')
+
+def inicio_registrado (request):
+        return render (request, 'core/inicio_registrado.html')
+
+def perfil (request):
+        return render (request, 'core/perfil.html')
